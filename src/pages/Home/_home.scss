@@ -1,0 +1,66 @@
+@import './home__cta/home__cta';
+@import './home__timing/home__timing';
+@import './home__location/home__location';
+@import './home__dresscode/home__dresscode';
+@import './home__details/home__details';
+@import './home__form/home__form';
+@import './home__footer/home__footer';
+
+.home {
+  background: white;
+  &__container {
+    position: relative;
+  }
+
+  &__section-heading {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: 'Cormorant';
+    font-weight: 600;
+    color: black;
+  }
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+  z-index: 1000;
+
+  @media (max-width: 1024px) {
+    padding: 16px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1024px) {
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Nunito Sans';
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      color: #868f74;
+    }
+  }
+}

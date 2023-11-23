@@ -1,0 +1,88 @@
+.cta {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/cta6.jpg');
+  background-size: cover;
+  background-position: center top 20%;
+  padding: 32px;
+
+  @media (max-width: 1024px) {
+    padding: 16px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__heading {
+    font-family: 'Cormorant';
+    font-size: 64px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  &__heading2 {
+    font-family: 'Cormorant';
+    font-size: 48px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  &__heading3 {
+    font-family: 'Cormorant';
+    font-size: 24px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+  }
+  &__paragrapgh {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    color: white;
+    font-size: 18px;
+    max-width: 550px;
+    text-align: center;
+
+    &:last-child {
+      margin-top: 32px;
+    }
+  }
+  &__hint {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+  }
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    position: absolute;
+    bottom: 24px;
+    animation: scrollanim 1s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollanim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

@@ -2,11 +2,11 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const HomeForm = () => {
-  // const presenceVariants = ['Обязательно приду', 'К сожалению, придти не смогу']
   const [presence, setPresence] = useState<boolean | undefined>(undefined);
   const [name, setName] = useState('');
   const [drinks, setDrinks] = useState<string[]>([]);
   const [other, setOther] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
   const drinksTitles = [
     'Вино красное',
@@ -47,13 +47,17 @@ const HomeForm = () => {
   };
 
   const sendFormHandler = async () => {
-    await axios.post('http://37.46.130.173:8010/api/bot/send?token=4o0IQ3Ktr1M3c5iR', {
+    await axios.post('https://antonandyulia.ru:8010/api/bot/send?token=4o0IQ3Ktr1M3c5iR', {
       fullname: name,
       presence,
       alcohol: drinks.join(', '),
       other,
     });
-    alert('Спасибо за ответ! Это поможет нам сделать наш праздник еще лучше!');
+    setShowAlert(true);
+    setPresence(undefined)
+    setName('')
+    setDrinks([])
+    setOther('')
   };
 
   return (
@@ -61,6 +65,25 @@ const HomeForm = () => {
       className="home__form form"
       id="form"
     >
+      <div className={`form__alert ${showAlert ? 'form__alert_active' : ''}`}>
+        <div className="form__alert-container">
+          <div className="form__alert-header">
+            <div className="form__alert-title">Ответ отправлен</div>
+          </div>
+
+          <div className="form__alert-subtitle">
+            Спасибо за ответ! <br /> Это поможет нам сделать наш праздник еще лучше!
+          </div>
+          <button
+            className="form__button form__alert-button"
+            onClick={() => {
+              setShowAlert(false);
+            }}
+          >
+            Закрыть
+          </button>
+        </div>
+      </div>
       <div className="form__heading home__section-heading">Анкета</div>
       <div className="form__description">
         Подтвердите свое присутствие на торжестве, заполнив эту небольшую анкету. Ответы помогут нам

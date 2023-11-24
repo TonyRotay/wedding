@@ -583,14 +583,14 @@ h6 {
   transition: 0.2s;
 }
 .form__radio:hover {
-  color: #868F74;
+  color: #868f74;
 }
 .form__radio:hover::after {
   content: "";
   position: absolute;
   border-radius: 100px;
   background-color: transparent;
-  border: 1px solid #868F74;
+  border: 1px solid #868f74;
   width: 20px;
   height: 20px;
   left: 0;
@@ -608,7 +608,7 @@ h6 {
   top: 4px;
 }
 .form__input {
-  border: 1px solid #868F74;
+  border: 1px solid #868f74;
   padding: 16px;
   font-family: "Nunito Sans";
   font-size: 16px;
@@ -650,13 +650,13 @@ h6 {
   transition: 0.2s;
 }
 .form__checkbox:hover {
-  color: #868F74;
+  color: #868f74;
 }
 .form__checkbox:hover::after {
   content: "";
   position: absolute;
   background-color: transparent;
-  border: 1px solid #868F74;
+  border: 1px solid #868f74;
   width: 20px;
   height: 20px;
   left: 0;
@@ -674,7 +674,7 @@ h6 {
 }
 .form__textarea {
   resize: none;
-  border: 1px solid #868F74;
+  border: 1px solid #868f74;
   padding: 16px;
   font-family: "Nunito Sans";
   font-size: 16px;
@@ -690,7 +690,7 @@ h6 {
   font-family: "Nunito Sans";
   font-size: 18px;
   color: white;
-  background-color: #868F74;
+  background-color: #868f74;
 }
 .form__button:hover {
   background-color: #97a087;
@@ -699,6 +699,60 @@ h6 {
   .form__button {
     width: 100%;
   }
+}
+.form__alert {
+  padding: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.form__alert_active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+.form__alert-container {
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 32px;
+  max-width: 50%;
+  align-items: center;
+}
+.form__alert-title {
+  font-family: "Cormorant";
+  font-size: 32px;
+  font-weight: 700;
+}
+.form__alert-subtitle {
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 500;
+  width: 80%;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.form__alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__alert-button {
+  width: 100%;
 }
 
 .footer {

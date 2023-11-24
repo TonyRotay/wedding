@@ -243,6 +243,8 @@
     pointer-events: none;
     z-index: 9999;
 
+    
+
     &_active {
       visibility: visible;
       opacity: 1;
@@ -259,6 +261,10 @@
       gap: 32px;
       max-width: 50%;
       align-items: center;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
     }
 
     &-title {
